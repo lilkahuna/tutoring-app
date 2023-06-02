@@ -1,9 +1,10 @@
-
 export const Wave = () => {
-  return (
+  
+    return (
     <div class="ocean">
         <div class="wave"></div>
         <div class="wave"></div>
     </div>
   )
+  
 }

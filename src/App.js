@@ -12,7 +12,7 @@ function App() {
 
         <p className='text-center text-sky-400 text-3xl m-5'>
           <Typewriter onInit={(typewriter) => {
-            typewriter.typeString('Im a science teacher').start().pauseFor(1000).deleteChars(15)
+            typewriter.typeString('I\'m a science teacher').start().pauseFor(1000).deleteChars(15)
               .typeString('mother').pauseFor(1000).deleteChars(6).pauseFor(1000).typeString('tutor')
           }}>
 
@@ -27,15 +27,22 @@ function App() {
             
             <h1 className='text-xl'>Get an Appointment Now</h1>  
 
-            <p className='my-4 text-md text-sky-950'>Book a tutoring appointment today and gain confidence in 
+            <p className='my-6 text-md text-sky-950'>Book a tutoring appointment today and gain confidence in 
               subjects like math, science, and English with the guidance of an experienced and dedicated tutor.</p>
             
-            <button className=''>Schedual Now</button>
+            <button className='bg-transparent hover:bg-blue-500 text-blue-700 
+              font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'>Schedual Now</button>
           </div>
           
-          <div className='border-s-slate-50 mx-3 '>
-            <h2 className='text-xl'>Nicoles Qualifications</h2>
-          </div>
+          <div className='border-s-slate-50 p-2 mx-3 w-1/4 text-center border-double border-2 border-white rounded-xl'>
+            
+            <h1 className='text-xl'>Nicoles Qualifications</h1>
+
+            <p className='my-6 text-md text-sky-950'>Discover the exceptional qualifications and expertise that make me the ideal candidate 
+              for your needs.</p>
+
+            <button className='bg-transparent hover:bg-blue-500 text-blue-700 
+              font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'>Qualifications</button>          </div>
 
       </div>
       

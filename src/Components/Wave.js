@@ -6,5 +6,4 @@ export const Wave = () => {
         <div class="wave"></div>
     </div>
   )
-  
 }

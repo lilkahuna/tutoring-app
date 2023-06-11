@@ -1,6 +1,8 @@
 import React from 'react'
-import Typewriter from 'typewriter-effect'
+//import Typewriter from 'typewriter-effect'
 import {Wave} from '../Components/Wave'
+
+
 
 const Home = () => {
     return (
@@ -9,7 +11,8 @@ const Home = () => {
             <div>
 
                 <h1 className='text-center text-sky-500 text-5xl m-12'>Nicole Liverman's Tutoring Service</h1>
-
+                
+                {/** 
                 <p className='text-center text-sky-400 text-3xl m-5'>
                     <Typewriter onInit={(typewriter) => {
                         typewriter.typeString('I\'m a science teacher').start().pauseFor(1000).deleteChars(15)
@@ -18,9 +21,11 @@ const Home = () => {
 
                     </Typewriter>
                 </p>
+                */}
+                <p className='text-center text-sky-400 text-3xl m-5'>Get help in multiple subjects by an experienced tutor!</p>
             </div>
 
-            <div className='bg-gradient-to-t from-yellow-200 via-30% to-sky-300 
+            <div className='mt-10 bg-gradient-to-t from-yellow-200 via-30% to-sky-300 
   rounded-2xl shadow-lg justify-evenly flex flex-row mx-6 p-5'>
 
                 <div className='flex flex-col border-s-slate-50 p-2 mx-3 w-1/4 text-center border-double border-2 border-white rounded-xl'>

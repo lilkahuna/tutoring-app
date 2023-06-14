@@ -2,19 +2,16 @@ import React, { FC } from 'react'
 //import Typewriter from 'typewriter-effect'
 import {Wave} from '../Components/Wave'
 
-interface Props {
-    name: string
-    age: number
-}
 
-const Home: React.FC<Props> = ({name, age}) => {
+
+const Home = () => {
     return (
         <>
 
             <div>
 
                 <h1 className='text-center text-sky-500 text-5xl m-12'>Nicole Liverman's Tutoring Service</h1>
-                <p>{age}, {name}</p>
+                
                 {/** 
                 <p className='text-center text-sky-400 text-3xl m-5'>
                     <Typewriter onInit={(typewriter) => {

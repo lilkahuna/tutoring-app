@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 interface Props{
     text: string
     path: string
-    icon?:  React.JSX.Element
+    icon?:  React.JSX.Element 
 }
 
 const ButtonLink: React.FC<Props> = ({ text, icon, path }) => {

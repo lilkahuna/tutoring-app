@@ -1,9 +1,9 @@
 import React from "react"
 import Home from "./Pages/Home"
 import Qualifications from './Pages/Qualifications'
-import Schedual from "./Pages/Schedual"
+import Schedual from "./Pages/Schedule"
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
-import {Wave} from "./Components/Wave";
+import Issues from "./Pages/Issues"
 
 function App() {
   return (
@@ -13,10 +13,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/qualifications" element={<Qualifications />}></Route>
-          <Route path="/schedual" element={<Schedual />}></Route>
+          <Route path="/schedule" element={<Schedual />}></Route>
+          <Route path="/issues" element={<Issues />}></Route>
         </Routes>
       </BrowserRouter>
-      <Wave />
     </>
 
     

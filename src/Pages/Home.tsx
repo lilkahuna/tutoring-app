@@ -1,8 +1,10 @@
-import React, { FC, useState } from 'react'
+import React from 'react'
 //import Typewriter from 'typewriter-effect'
 import {Link} from 'react-router-dom'
+import { Wave } from '../Components/Wave';
 
 const Home = () => {
+
     return (
         <>
 
@@ -33,7 +35,7 @@ const Home = () => {
                     <p className='my-6 text-md text-sky-950'>Book a tutoring appointment today and gain confidence in
                         subjects like math, science, and English with the guidance of an experienced and dedicated tutor.</p>
 
-                    <Link to='/schedual' className='bg-transparent hover:bg-blue-500 text-blue-700 
+                    <Link to='/schedule' className='bg-transparent hover:bg-blue-500 text-blue-700 
                         font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'>Schedual Now
                     </Link>
                     
@@ -53,7 +55,7 @@ const Home = () => {
                 </div>
 
             </div>
-            
+            <Wave />
         </>
     )
 }

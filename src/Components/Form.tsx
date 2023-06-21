@@ -13,18 +13,18 @@ interface FormProps{
     changeInputThree?: InputSettings
     isSelectVisible: boolean
     submitFunc: (e: React.FormEvent) => void
-    ref?: React.MutableRefObject<string | HTMLFormElement | undefined>
+    
 }
 
 // decalre defaults for props here
 const Form: React.FC<FormProps> = ( { title, submitFunc, changeInputOne={isVisible: true}, changeInputTwo={isVisible: true}, 
-    changeInputThree={isVisible: true}, isSelectVisible, ref } ) => {
+    changeInputThree={isVisible: true}, isSelectVisible } ) => {
     
     return (
 
         <div className="container mx-auto py-8">
             <h1 className="text-5xl font-bold mb-6 text-center text-sky-500">{title}</h1>
-            <form className="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md" onSubmit={submitFunc} ref={ref}>
+            <form className="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md" onSubmit={submitFunc}>
                 {changeInputOne?.isVisible && <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="input_one">{changeInputOne?.name || "Student Name"}</label>
                     <input className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"

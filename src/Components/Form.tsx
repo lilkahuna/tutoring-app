@@ -7,23 +7,24 @@ type InputSettings = {
 }
 
 interface FormProps{
-    title: string 
+    title: string
     changeInputOne?: InputSettings
     changeInputTwo?: InputSettings
     changeInputThree?: InputSettings
     isSelectVisible: boolean
     submitFunc: (e: React.FormEvent) => void
+    ref?: React.MutableRefObject<string | HTMLFormElement | undefined>
 }
 
 // decalre defaults for props here
 const Form: React.FC<FormProps> = ( { title, submitFunc, changeInputOne={isVisible: true}, changeInputTwo={isVisible: true}, 
-    changeInputThree={isVisible: true}, isSelectVisible } ) => {
+    changeInputThree={isVisible: true}, isSelectVisible, ref } ) => {
     
     return (
 
         <div className="container mx-auto py-8">
-            <h1 className="text-2xl font-bold mb-6 text-center text-sky-500">{title}</h1>
-            <form className="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md" onSubmit={submitFunc}>
+            <h1 className="text-5xl font-bold mb-6 text-center text-sky-500">{title}</h1>
+            <form className="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md" onSubmit={submitFunc} ref={ref}>
                 {changeInputOne?.isVisible && <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="input_one">{changeInputOne?.name || "Student Name"}</label>
                     <input className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
@@ -41,11 +42,11 @@ const Form: React.FC<FormProps> = ( { title, submitFunc, changeInputOne={isVisib
                 </div>}
                 {isSelectVisible && <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="select_one">Subject</label>
-                    <select className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500'>
-                        <option>Math</option>
-                        <option>Science</option>
-                        <option>History</option>
-                        <option>English</option>
+                    <select name='select_one' id='select_one' className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500'>
+                        <option value="Math">Math</option>
+                        <option value="Science">Science</option>
+                        <option value="History">History</option>
+                        <option value="English">English</option>
                     </select>
                 </div>}
                 <button

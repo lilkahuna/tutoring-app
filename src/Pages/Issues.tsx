@@ -13,7 +13,7 @@ const Issues = () => {
     return (
         <>
             <div>
-                <Form title='What Went Wrong?' isSelectVisible={false} submitFunc={handleIssue} changeInputOne={{name: "Name", isVisible: true}} 
+                <Form title='What Went Wrong?' isSelectVisible={false} onSubmit={handleIssue} changeInputOne={{name: "Name", isVisible: true}} 
                     changeInputThree={{name: "Issue", type: "text", isVisible: true}}/>
             <ButtonLink text='Back' path='/schedule' icon={<TbArrowBackUp />}/>
             </div>

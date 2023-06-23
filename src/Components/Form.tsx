@@ -17,8 +17,8 @@ interface FormProps extends ComponentProps<"form">{
 // declare defaults for props here
 const Form: React.FC<FormProps> = ( { title, changeInputOne={isVisible: true}, changeInputTwo={isVisible: true}, 
     changeInputThree={isVisible: true}, isSelectVisible, ...props }) => {
-    
-    return (
+
+        return (
 
         <div className="container mx-auto py-8">
             <h1 className="text-5xl font-bold mb-6 text-center text-sky-500">{title}</h1>

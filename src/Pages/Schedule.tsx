@@ -1,36 +1,36 @@
-import React, { useRef } from 'react'
+import React, { useState } from 'react'
 import ButtonLink from '../Components/ButtonLink'
 import { TbArrowBackUp, TbArrowForwardUp } from 'react-icons/tb'
 import Form from '../Components/Form'
-import emailjs from '@emailjs/browser'
 
-const Schedual = () => {
+type info = {
+  studentName: string
+  email: string
+  time: string
+  subject: string
+}
 
-  const formRef = useRef<HTMLFormElement>(null)
+const Schedual = () => { 
+  const [info, setInfo] = useState<info>()
+
+  //error here
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>{
+    const {name, value} = e.target
+    setInfo((prev: any)=> {
+      return{...prev, [name]: value}
+    })
+  }
+
   const handleSchedule = (e: React.FormEvent) => {
     e.preventDefault()
-
-    if (formRef.current) {
-      console.log(formRef.current)
-    }
-    else{
-      console.log(formRef.current)
-    }
-
+    console.log(info)
   }
-  /** 
-    emailjs.sendForm('service_os6o6t6', 'template_ajedy5a', formRef.current, 'YlBlgsE3qya_lU-_j')
-    .then((result) => {
-      console.log(result.text);
-    }, (error) => {
-      console.log(error.text);
-    });
-    */
+
   return (
 
     <>
       <div>
-        <Form title="Schedule Here" onSubmit={handleSchedule} isSelectVisible={true} ref={formRef} />
+        <Form title="Schedule Here" onSubmit={handleSchedule} isSelectVisible={true} onChange={handleChange}/>
       </div>
       <ButtonLink text="Back" path="/" icon={<TbArrowBackUp />} />
       <ButtonLink text="Issues" path="/issues" icon={<TbArrowForwardUp />} />

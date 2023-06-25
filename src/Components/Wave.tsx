@@ -2,7 +2,7 @@ import React from "react"
 
 
 
-export const Wave = () => {
+const Wave = () => {
   
     return (
     <div className="ocean">
@@ -11,3 +11,5 @@ export const Wave = () => {
     </div>
   )
 }
+
+export default Wave

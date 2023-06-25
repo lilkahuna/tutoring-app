@@ -1,7 +1,6 @@
 import React from 'react'
-//import Typewriter from 'typewriter-effect'
 import {Link} from 'react-router-dom'
-import { Wave } from '../Components/Wave';
+import  Wave  from '../Components/Wave';
 
 const Home = () => {
 
@@ -11,16 +10,6 @@ const Home = () => {
             <div>
 
                 <h1 className='text-center text-sky-500 text-5xl m-12'>Nicole Liverman's Tutoring Service</h1>
-                
-                
-                {/** <p className='text-center text-sky-400 text-3xl m-5'>
-                    <Typewriter onInit={(typewriter: any) => {
-                        typewriter.typeString('I\'m a science teacher').start().pauseFor(1000).deleteChars(15)
-                            .typeString('mother').pauseFor(1000).deleteChars(6).pauseFor(1000).typeString('tutor')
-                    }}>
-
-                    </Typewriter>
-                </p> */}
                 
                 <p className='text-center text-sky-400 text-3xl m-5'>Get help in multiple subjects by an experienced tutor!</p>
             </div>

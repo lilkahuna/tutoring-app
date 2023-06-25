@@ -11,12 +11,13 @@ interface FormProps extends ComponentProps<"form">{
     changeInputOne?: InputSettings
     changeInputTwo?: InputSettings
     changeInputThree?: InputSettings
+    onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void
     isSelectVisible: boolean
 } 
 
 // declare defaults for props here
 const Form: React.FC<FormProps> = ( { title, changeInputOne={isVisible: true}, changeInputTwo={isVisible: true}, 
-    changeInputThree={isVisible: true}, isSelectVisible, ...props }) => {
+    changeInputThree={isVisible: true}, isSelectVisible, onChange, ...props }) => {
 
         return (
 
@@ -26,21 +27,22 @@ const Form: React.FC<FormProps> = ( { title, changeInputOne={isVisible: true}, c
                 {changeInputOne?.isVisible && <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="input_one">{changeInputOne?.name || "Student Name"}</label>
                     <input className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-                        type={changeInputOne?.type || "text"} name='input_one' id='input_one'/>
+                        type={changeInputOne?.type || "text"} name='input_one' id='input_one' onChange={onChange}/>
                 </div>}
                 {changeInputTwo?.isVisible&& <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="input_two">{changeInputTwo?.name || "Email"}</label>
                     <input className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-                        type={changeInputTwo?.type || "email"} name='input_two' id='input_two'/>
+                        type={changeInputTwo?.type || "email"} name='input_two' id='input_two' onChange={onChange}/>
                 </div>}
                 {changeInputThree?.isVisible && <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="input_three">{changeInputThree?.name || "Appointment Time"}</label>
                     <input className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-                        type={changeInputThree?.type || "datetime-local"} name='input_three' id='input_three'/>
+                        type={changeInputThree?.type || "datetime-local"} name='input_three' id='input_three' onChange={onChange}/>
                 </div>}
                 {isSelectVisible && <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="select_one">Subject</label>
-                    <select name='select_one' id='select_one' className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500'>
+                    <select name='select_one' id='select_one' onChange={onChange} className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500'>
+                        <option value=""></option>
                         <option value="Math">Math</option>
                         <option value="Science">Science</option>
                         <option value="History">History</option>

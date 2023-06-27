@@ -3,27 +3,28 @@ import ButtonLink from '../Components/ButtonLink'
 import { TbArrowBackUp, TbArrowForwardUp } from 'react-icons/tb'
 import Form from '../Components/Form'
 
-type info = {
-  studentName: string
-  email: string
-  time: string
-  subject: string
+type Info = {
+  input_one: string
+  input_two: string
+  input_three: string
+  select_one: string
 }
 
 const Schedual = () => { 
-  const [info, setInfo] = useState<info>()
+  const [schedule, setScedule] = useState<Info | undefined>()
 
-  //error here
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>{
+    //object deconstruction
     const {name, value} = e.target
-    setInfo((prev: any)=> {
-      return{...prev, [name]: value}
+    setScedule((prev: Info | undefined)=> {
+      //make sure to add type to return value
+      return{...prev, [name]: value} as Info | undefined
     })
   }
 
   const handleSchedule = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log(info)
+    console.log(schedule?.select_one)
   }
 
   return (

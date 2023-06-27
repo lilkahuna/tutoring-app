@@ -1,29 +1,30 @@
-import React, { ComponentProps } from 'react'
+import React from 'react'
 
 type InputSettings = {
-    isVisible: boolean,
-    name?: string,
+    isVisible: boolean
+    name?: string
     type?: string
 }
 
-interface FormProps extends ComponentProps<"form">{
+interface FormProps{
     title: string
     changeInputOne?: InputSettings
     changeInputTwo?: InputSettings
     changeInputThree?: InputSettings
     onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void
+    onSubmit: (e: React.FormEvent) => void
     isSelectVisible: boolean
 } 
 
 // declare defaults for props here
 const Form: React.FC<FormProps> = ( { title, changeInputOne={isVisible: true}, changeInputTwo={isVisible: true}, 
-    changeInputThree={isVisible: true}, isSelectVisible, onChange, ...props }) => {
+    changeInputThree={isVisible: true}, isSelectVisible, onChange, onSubmit } ) => {
 
         return (
 
         <div className="container mx-auto py-8">
             <h1 className="text-5xl font-bold mb-6 text-center text-sky-500">{title}</h1>
-            <form className="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md" {...props}>
+            <form className="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md" onSubmit={onSubmit}>
                 {changeInputOne?.isVisible && <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="input_one">{changeInputOne?.name || "Student Name"}</label>
                     <input className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"

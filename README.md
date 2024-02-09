@@ -1,5 +1,3 @@
-# Getting Started with Create React App
-
-This project is currently on hiatus.
+# This project is currently on hiatus.
 
 
